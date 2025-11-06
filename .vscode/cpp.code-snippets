@@ -1,0 +1,10 @@
+{
+  "LeetCode Template": {
+    "prefix": "lc",       
+    "body": [
+      "#include <bits/stdc++.h>",
+      "using namespace std;"
+    ],
+    "description": "Shortcut for standard LeetCode includes"
+  }
+}
