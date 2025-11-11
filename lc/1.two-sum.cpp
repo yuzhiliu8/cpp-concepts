@@ -13,10 +13,10 @@ public:
         
         vector<int> ans;
         unordered_map<int, int> m;
-        for (int i = 0; i < nums.size(); i++){
+        for (size_t i = 0; i < nums.size(); i++){
             int t = target - nums[i];
             if (m.contains(t)){
-                return {i, m[t]};
+                return {(int) i , m[t]};
             }
             else {
                 m[nums[i]] = i;
