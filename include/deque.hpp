@@ -13,33 +13,31 @@ class DNode {
         int value;
         DNode* next;
         DNode* prev;
-
 };
 
 
 class Deque {
     public:
         Deque();
-        Deque(std::vector<int>& v);
+        Deque(const std::vector<int>& v);
+        ~Deque();
+
         void insertHead(int x);
-        void deleteHead();
-
-        void insertTail(int x);
-        void deleteTail(int x);
-        bool contains(int x);
-
         int popHead();
         int peekHead();
+
+        void insertTail(int x);
         int popTail();
         int peekTail();
 
+        bool contains(int x);
         void remove(int x);
-        int size();
+        int size() const;
         bool empty();
 
         std::string toString();
 
-        bool operator==(Deque& other);
+        bool operator==(const Deque& other) const;
     
     private:
         DNode* head_;
