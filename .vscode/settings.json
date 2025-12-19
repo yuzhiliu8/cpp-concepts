@@ -9,6 +9,7 @@
         "type_traits": "cpp",
         "utility": "cpp",
         "variant": "cpp",
-        "expected": "cpp"
+        "expected": "cpp",
+        "*.hpp": "cpp",
     }
 }

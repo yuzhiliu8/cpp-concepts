@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "deque.hpp"
+#include "resizeable_array.hpp"
 
 int* ptr_test(){
     int* value = new int(5);
@@ -9,14 +10,38 @@ int* ptr_test(){
 }
 
 int main(){
-    
-    int* ptr = ptr_test();
-    std::cout << "Pointer: " << std::endl;
-    std::cout << ptr << std::endl;
-    std::cout << *ptr << std::endl;
-    delete ptr;
-    ptr = nullptr;
-    std::cout << "value: " << std::endl;
-    std::cout << *ptr << std::endl;
+
+    ResizeableArray<int> arr;
+    std::cout << "Size: " << arr.size() << "\n";
+    std::cout << "Capacity: " << arr.capacity() << "\n\n";
+    arr.push_back(1);
+    std::cout << "Size: " << arr.size() << "\n";
+    std::cout << "Capacity: " << arr.capacity() << "\n\n";
+    arr.push_back(2);
+    std::cout << "Size: " << arr.size() << "\n";
+    std::cout << "Capacity: " << arr.capacity() << "\n\n";
+    arr.push_back(3);
+    std::cout << "Size: " << arr.size() << "\n";
+    std::cout << "Capacity: " << arr.capacity() << "\n\n";
+    arr.push_back(4);
+    std::cout << "Size: " << arr.size() << "\n";
+    std::cout << "Capacity: " << arr.capacity() << "\n\n";
+
+    arr.push_back(5);
+    std::cout << "Size: " << arr.size() << "\n";
+    std::cout << "Capacity: " << arr.capacity() << "\n\n";
+
+    arr.push_back(6);
+    std::cout << "Size: " << arr.size() << "\n";
+    std::cout << "Capacity: " << arr.capacity() << "\n\n";
+    arr.push_back(7);
+    std::cout << "Size: " << arr.size() << "\n";
+    std::cout << "Capacity: " << arr.capacity() << "\n\n";
+
+    arr.pop_back();
+    // std::cout << "POP: " << x << "\n";
+    // std::cout << "Size: " << arr.size() << "\n";
+    // std::cout << "Capacity: " << arr.capacity() << "\n\n";
+
     return 0;
 }
