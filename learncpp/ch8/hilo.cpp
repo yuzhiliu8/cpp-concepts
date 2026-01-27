@@ -12,6 +12,21 @@ namespace Random {
     }
 }
 
+void cin_ignore(){
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+
+int get_int(){
+    int x{};
+    std::cout << "Enter an integer 1-100: ";
+    while(!(std::cin >> x)){
+        std::cout << "Enter an integer 1-100: ";
+        std::cin.clear();
+        cin_ignore();
+    }
+    return x;
+}
+
 void hilo(){
     std::cout << "Random Number 1-100. You have 7 guesses.\n";
     int random_number{Random::get(1, 100)};
@@ -20,9 +35,8 @@ void hilo(){
     int guess_attempts{};
     while (playing){
         ++guess_attempts;
-        std::cout << "Guess #" << guess_attempts << ": ";
-        int current_guess{};
-        std::cin >> current_guess;
+        std::cout << "Guess #" << guess_attempts << ":\n";
+       int current_guess{ get_int() };
 
         if (current_guess == random_number){
             std::cout << "Correct! You have won!\n";

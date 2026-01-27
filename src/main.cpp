@@ -9,7 +9,17 @@ int* ptr_test(){
     return value;
 }
 
+class A{
+    public:
+        A(int x): x(x){}
+
+    private:
+        int x;
+
+};
+
 int main(){
+    A a = 5;
 
     ResizeableArray<int> arr;
     std::cout << "Size: " << arr.size() << "\n";
